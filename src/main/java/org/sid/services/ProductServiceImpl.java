@@ -72,6 +72,17 @@ public class ProductServiceImpl  implements ProductService{
 		// TODO Auto-generated method stub
 		return imgrep.findAll();
 	}
+	@Override
+	public List<Produit> listcategoryname(String category) {
+		// TODO Auto-generated method stub
+		
+		return produitrep.findByCategoryname(category);
+	}
+	@Override
+	public List<Category> Allcategory() {
+		// TODO Auto-generated method stub
+		return catrep.findAll();
+	}
 	
 
 }
