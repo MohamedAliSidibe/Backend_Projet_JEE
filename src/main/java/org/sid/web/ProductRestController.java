@@ -1,3 +1,4 @@
+
 package org.sid.web;
 
 import java.util.List;
@@ -60,5 +61,4 @@ class ImageToProduit{
 	private int ref;
 	private String imageName;
 }
-
 

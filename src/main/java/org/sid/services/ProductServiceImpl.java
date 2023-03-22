@@ -37,9 +37,11 @@ public class ProductServiceImpl  implements ProductService{
 		 produitrep.findAll().forEach(p->{
 		  String l=  String.valueOf(p.getRef()); 
 		  p.setId("p"+l);
+
 		  p.setName("Product"+l);
 		  L.add(p);
 		  System.out.println(p.getId());
+
 		});;
 		return L;
 	}

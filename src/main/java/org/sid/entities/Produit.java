@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,14 +32,17 @@ public class Produit {
    @JsonProperty(access = Access.WRITE_ONLY)
    private int ref;
    private String id;
+
    private String name;
    private double price;
+
    private String description;
    @JsonProperty(access = Access.WRITE_ONLY)
    @ManyToOne
    private Category category;
    private String categoryname;
    @ManyToMany(fetch=FetchType.EAGER)
+
    private Collection<Image> images=new ArrayList<>();
 public Produit(String id, String name, double price, String description, Category category, String categoryname,
 		Collection<Image> images) {
@@ -51,5 +55,6 @@ public Produit(String id, String name, double price, String description, Categor
 	this.categoryname = categoryname;
 	this.images = images;
 }
+
    
 }

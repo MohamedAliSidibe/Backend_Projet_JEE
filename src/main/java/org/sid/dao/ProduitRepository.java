@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin("*")
 @RepositoryRestResource
 public interface ProduitRepository extends JpaRepository<Produit,Long> {
+
 	
 	Produit findByName(String name);
 	Produit findByRef(int ref);
 	List<Produit> findByCategoryname(String category);
+
 }
