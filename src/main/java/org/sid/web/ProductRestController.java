@@ -3,12 +3,14 @@ package org.sid.web;
 
 import java.util.List;
 
+import org.sid.entities.Category;
 import org.sid.entities.Image;
 import org.sid.entities.Produit;
 import org.sid.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +27,14 @@ public class ProductRestController {
 	public List<Produit> listproduit(){
 		return productservice.Allproduit();
 	}
+	@GetMapping(path="/category")
+	public List<Category> listcategory(){
+		return productservice.Allcategory();
+	}
+	 @GetMapping("/produit/{category}")
+	  public List<Produit> getProduitsByCategory(@PathVariable String category) {
+	    return productservice.listcategoryname(category);
+	  }
 	@PostMapping(path = "/produit")
 	public Produit addproduct(@RequestBody Produit produit) {
 		return productservice.addproduct(produit);

@@ -29,6 +29,7 @@ public class Produit {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @JsonIgnore
+   @JsonProperty(access = Access.WRITE_ONLY)
    private int ref;
    private String id;
 
