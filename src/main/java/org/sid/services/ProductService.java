@@ -15,5 +15,8 @@ public interface ProductService {
 	 List<Produit> listcategoryname(String category);
 	 List<Category> Allcategory();
 	 void addImgToproduct(int ref,String images);
+	 void supprimer_product(int ref);
+	 void edit_product(Produit produit,int ref);
+	 Produit view_product(int ref);
 
 }

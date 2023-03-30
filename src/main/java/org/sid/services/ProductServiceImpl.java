@@ -85,6 +85,34 @@ public class ProductServiceImpl  implements ProductService{
 		// TODO Auto-generated method stub
 		return catrep.findAll();
 	}
+	@Override
+	public void supprimer_product(int ref) {
+		// TODO Auto-generated method stub
+		Produit p=produitrep.findByRef(ref);
+		produitrep.delete(p);
+	}
+	@Override
+	public void edit_product(Produit produit,int ref) {
+	    Produit prod_ref = produitrep.findByRef(ref);
+	    //System.out.println(prod_ref.getRef());
+	    if (prod_ref != null) {
+	        prod_ref.setId(produit.getId());
+	        prod_ref.setName(produit.getName());
+	        prod_ref.setPrice(produit.getPrice());
+	        prod_ref.setDescription(produit.getDescription());
+	       // prod_ref.setCategory(produit.getCategory());
+	        prod_ref.setCategoryname(produit.getCategoryname());
+	        //prod_ref.setImages(produit.getImages());
+	        produitrep.save(prod_ref);
+	    }
+	}
+	@Override
+	public Produit view_product(int ref) {
+		// TODO Auto-generated method stub
+		Produit prod=produitrep.findByRef(ref);
+		return prod;
+	}
+
 	
 
 }

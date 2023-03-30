@@ -55,6 +55,5 @@ public Produit(String id, String name, double price, String description, Categor
 	this.categoryname = categoryname;
 	this.images = images;
 }
-
    
 }
